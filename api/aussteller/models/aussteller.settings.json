@@ -41,6 +41,21 @@
       ],
       "plugin": "upload",
       "required": false
+    },
+    "links": {
+      "type": "component",
+      "repeatable": false,
+      "component": "sozial.sozial"
+    },
+    "email": {
+      "type": "email"
+    },
+    "vorname": {
+      "type": "string",
+      "required": true
+    },
+    "nachname": {
+      "type": "string"
     }
   }
 }
