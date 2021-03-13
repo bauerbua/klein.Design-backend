@@ -1,0 +1,28 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/bildergalerie",
+      "handler": "bildergalerie.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/bildergalerie",
+      "handler": "bildergalerie.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/bildergalerie",
+      "handler": "bildergalerie.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

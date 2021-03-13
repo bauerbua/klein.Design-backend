@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/ausstellers",
+      "handler": "aussteller.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/ausstellers/count",
+      "handler": "aussteller.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/ausstellers/:id",
+      "handler": "aussteller.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/ausstellers",
+      "handler": "aussteller.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/ausstellers/:id",
+      "handler": "aussteller.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/ausstellers/:id",
+      "handler": "aussteller.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}
