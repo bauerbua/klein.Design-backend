@@ -1,0 +1,46 @@
+{
+  "kind": "collectionType",
+  "collectionName": "ausstellers",
+  "info": {
+    "name": "Aussteller",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "titel": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "tags": {
+      "collection": "tag"
+    },
+    "beschreibung": {
+      "type": "text",
+      "minLength": 100,
+      "required": true
+    },
+    "titelbild": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "fotos": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": false
+    }
+  }
+}

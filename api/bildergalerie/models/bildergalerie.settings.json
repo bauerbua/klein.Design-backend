@@ -1,0 +1,23 @@
+{
+  "kind": "singleType",
+  "collectionName": "bildergaleries",
+  "info": {
+    "name": "Bildergalerie"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "impressionen": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": false
+    }
+  }
+}

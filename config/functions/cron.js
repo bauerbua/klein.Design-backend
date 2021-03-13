@@ -9,13 +9,14 @@
  *
  * See more details here: https://strapi.io/documentation/v3.x/concepts/configurations.html#cron-tasks
  */
+const http = require("http");
 
 module.exports = {
-  /**
-   * Simple example.
-   * Every monday at 1am.
-   */
-  // '0 1 * * 1': () => {
-  //
-  // }
+  '*/25 5-23 * * *': () => {
+    console.log('PINGING STRAPI');
+    const url = 'http://klein-design-backend.herokuapp.com';
+    http.get(url, function(res) {
+      console.log(res.statusCode, res.statusMessage)
+    })
+  }
 };
