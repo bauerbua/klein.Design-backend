@@ -12,7 +12,19 @@ module.exports = {
     let entity;
     if (ctx.is('multipart')) {
       const {data, files} = parseMultipartData(ctx);
-      entity = await strapi.services.aussteller.create(data, { files });
+      const {vorname, nachname, email, titel, beschreibung, tags, links} = data;
+      entity = await strapi.api.aussteller.services.aussteller.create(
+        {
+          vorname,
+          nachname,
+          email,
+          tags,
+          links,
+          titel,
+          beschreibung,
+          published_at: null
+        },
+        { files });
     } else {
       const {vorname, nachname, email, titel, beschreibung, tags, links} = ctx.request.body;
       entity = await strapi.services.aussteller.create({
