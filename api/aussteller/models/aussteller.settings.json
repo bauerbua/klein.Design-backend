@@ -21,7 +21,6 @@
     },
     "beschreibung": {
       "type": "text",
-      "minLength": 100,
       "required": true
     },
     "titelbild": {

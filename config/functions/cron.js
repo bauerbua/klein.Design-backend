@@ -14,8 +14,10 @@ const http = require("http");
 module.exports = {
   '*/25 5-23 * * *': () => {
     console.log('PINGING STRAPI');
-    const url = 'http://klein-design-backend.herokuapp.com';
-    http.get(url, function(res) {
+    const options = {
+      host: 'klein-design-backend.herokuapp.com',
+      path: '' };
+    http.get(options, function(res) {
       console.log(res.statusCode, res.statusMessage)
     })
   }
