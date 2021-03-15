@@ -41,13 +41,13 @@ module.exports = {
 
     entity = sanitizeEntity(entity, {model: strapi.models.aussteller});
 
-    /*await strapi.plugin['email'].services.email.send({
+    await strapi.plugins.email.services.email.send({
       to: 'bauerjakob17@gmail.com',
       from: 'bauer.j99@gmx.at',
       subject: 'BEWERBUNG AUSSTELLER',
       priority: 'high',
-      text: ctx.request.body
-    })*/
+      text: 'email sent via strapi'
+    })
 
     return entity
   }

@@ -12,7 +12,7 @@
 const http = require("http");
 
 module.exports = {
-  '*/29 7-22 * * *': () => {
+  '*/25 7-22 * * *': () => {
     console.log('PINGING STRAPI');
     const options = {
       host: 'klein-design-backend.herokuapp.com',
