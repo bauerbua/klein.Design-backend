@@ -12,7 +12,8 @@ module.exports = {
     let entity;
     if (ctx.is('multipart')) {
       const {data, files} = parseMultipartData(ctx);
-      const {vorname, nachname, email, titel, beschreibung, tags, links} = data;
+      const {vorname, nachname, email, firmenname, beschreibung, tags, links, telefonnummer} = data;
+      strapi.services.aussteller.renameImages(files, data);
       entity = await strapi.api.aussteller.services.aussteller.create(
         {
           vorname,
@@ -20,35 +21,38 @@ module.exports = {
           email,
           tags,
           links,
-          titel,
+          firmenname,
           beschreibung,
+          telefonnummer,
+          // standplatz,
           published_at: null
         },
         { files });
     } else {
-      const {vorname, nachname, email, titel, beschreibung, tags, links} = ctx.request.body;
+      const {vorname, nachname, email, firmenname, beschreibung, tags, links, standplatz, telefonnummer} = ctx.request.body;
       entity = await strapi.services.aussteller.create({
         vorname,
         nachname,
         email,
         tags,
         links,
-        titel,
+        firmenname,
         beschreibung,
+        telefonnummer,
+        standplatz,
         published_at: null
       });
     }
 
-    entity = sanitizeEntity(entity, {model: strapi.models.aussteller});
-
-    await strapi.plugins.email.services.email.send({
+    // ToDo: How to handle if request passes but sending email fails? It shouldn't return an error to client...
+    /*await strapi.plugins.email.services.email.send({
       to: 'bauerjakob17@gmail.com',
       from: 'bauer.j99@gmx.at',
       subject: 'BEWERBUNG AUSSTELLER',
       priority: 'high',
       text: 'email sent via strapi'
-    })
+    })*/
 
-    return entity
+    return sanitizeEntity(entity, {model: strapi.models.aussteller});
   }
 }

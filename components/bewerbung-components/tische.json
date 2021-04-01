@@ -1,0 +1,38 @@
+{
+  "collectionName": "standplatz",
+  "info": {
+    "name": "standplatz",
+    "icon": "money-bill",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "standplatz": {
+      "type": "enumeration",
+      "enum": [
+        "klein",
+        "gross"
+      ],
+      "required": false,
+      "private": true
+    },
+    "tische": {
+      "type": "enumeration",
+      "enum": [
+        "null",
+        "eins",
+        "zwei",
+        "stehtisch"
+      ],
+      "private": true
+    },
+    "strom": {
+      "type": "enumeration",
+      "enum": [
+        "ja",
+        "nein"
+      ],
+      "private": true
+    }
+  }
+}
