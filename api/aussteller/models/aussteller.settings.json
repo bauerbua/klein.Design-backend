@@ -11,10 +11,20 @@
     "draftAndPublish": true
   },
   "attributes": {
-    "titel": {
+    "firmenname": {
       "type": "string",
       "required": true,
       "unique": true
+    },
+    "vorname": {
+      "type": "string",
+      "required": true
+    },
+    "nachname": {
+      "type": "string"
+    },
+    "email": {
+      "type": "email"
     },
     "tags": {
       "collection": "tag"
@@ -44,17 +54,17 @@
     "links": {
       "type": "component",
       "repeatable": false,
-      "component": "sozial.sozial"
+      "component": "bewerbung-components.sozial"
     },
-    "email": {
-      "type": "email"
+    "telefonnummer": {
+      "type": "biginteger",
+      "required": false,
+      "private": true
     },
-    "vorname": {
-      "type": "string",
-      "required": true
-    },
-    "nachname": {
-      "type": "string"
+    "standplatz": {
+      "type": "component",
+      "repeatable": false,
+      "component": "bewerbung-components.tische"
     }
   }
 }

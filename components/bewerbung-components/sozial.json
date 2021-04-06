@@ -1,15 +1,13 @@
 {
-  "collectionName": "components_sozial_sozials",
+  "collectionName": "links",
   "info": {
-    "name": "sozial",
-    "icon": "address-card"
+    "name": "links",
+    "icon": "address-card",
+    "description": ""
   },
   "options": {},
   "attributes": {
     "facebook": {
-      "type": "string"
-    },
-    "twitter": {
       "type": "string"
     },
     "instagram": {

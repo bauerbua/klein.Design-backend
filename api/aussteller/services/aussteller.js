@@ -5,4 +5,13 @@
  * to customize this service
  */
 
-module.exports = {};
+module.exports = {
+  renameImages(files, data) {
+    for (let i = 0; i < files.fotos.length; i++) {
+      const imgName = data.firmenname.replaceAll(/ /g, '_').toLocaleLowerCase();
+      files.fotos[i].name = imgName + '_' + i
+    }
+    return files
+  }
+
+};
