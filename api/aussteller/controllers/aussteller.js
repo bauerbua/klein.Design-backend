@@ -54,5 +54,5 @@ module.exports = {
     })*/
 
     return sanitizeEntity(entity, {model: strapi.models.aussteller});
-  }
+  },
 }
