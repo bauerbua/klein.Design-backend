@@ -14,11 +14,11 @@ module.exports = ({ env }) => ({
   email: {
     provider: 'sendgrid',
     providerOptions: {
-      apiKey: env('SENDGRID_API_KEY'),
+      apiKey: env('SENDGRID_API_KEY', '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'),
     },
     settings: {
-      defaultFrom: 'bauer.j99@gmx.at',
-      defaultReplyTo: 'bauer.j99@gmx.at',
+      defaultFrom: 'kleindesign.services@gmail.com',
+      defaultReplyTo: 'kleindesign.services@gmail.com',
     },
   },
 });
