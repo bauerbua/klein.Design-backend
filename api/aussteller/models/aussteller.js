@@ -28,6 +28,7 @@ module.exports = {
     },
 
     async afterCreate(data) {
+      console.log(data);
       await strapi.plugins.email.services.email.send({
         to: 'bauerjakob17@gmail.com',
         template_id: "d-bdc39ab2085945458dbe93accf05facb",
