@@ -7,7 +7,7 @@
   },
   "options": {},
   "attributes": {
-    "standplatz": {
+    "groesse": {
       "type": "enumeration",
       "enum": [
         "klein",

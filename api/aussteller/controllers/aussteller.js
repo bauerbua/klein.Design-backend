@@ -12,8 +12,11 @@ module.exports = {
     let entity;
     if (ctx.is('multipart')) {
       const {data, files} = parseMultipartData(ctx);
-      const {vorname, nachname, email, firmenname, beschreibung, tags, links, telefonnummer} = data;
+      const {vorname, nachname, email, firmenname, beschreibung, tags, links, telefonnummer, standplatz} = data;
       strapi.services.aussteller.renameImages(files, data);
+      if (data.newsletter) {
+        await strapi.services.aussteller.addEmailToNewsletter(email);
+      }
       entity = await strapi.services.aussteller.create(
         {
           vorname,
@@ -24,12 +27,13 @@ module.exports = {
           firmenname,
           beschreibung,
           telefonnummer,
-          // standplatz,
+          standplatz,
           published_at: null
         },
         { files });
     } else {
-      const {vorname, nachname, email, firmenname, beschreibung, tags, links, telefonnummer} = ctx.request.body;
+      const {vorname, nachname, email, firmenname, beschreibung, tags, links, telefonnummer, standplatz} = ctx.request.body;
+      await strapi.services.aussteller.addEmailToNewsletter(email);
       entity = await strapi.services.aussteller.create({
         vorname,
         nachname,
@@ -39,7 +43,7 @@ module.exports = {
         firmenname,
         beschreibung,
         telefonnummer,
-        // standplatz,
+        standplatz,
         published_at: null
       });
     }

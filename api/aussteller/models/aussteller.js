@@ -9,26 +9,16 @@ module.exports = {
 
   lifecycles: {
     async afterDelete(data) {
-      // delete fotos
-      if (data.fotos.length <= 1) {
+      // delete all fotos
+      if (data.fotos.length >= 1) {
         for (const foto of data.fotos) {
-          if (foto.related.length <= 1) {
-            const file = await strapi.plugins.upload.services.upload.fetch({id: foto.id});
-            await strapi.plugins.upload.services.upload.remove(file);
-          }
-        }
-      }
-      // delete titelbild
-      if (data.titelbild) {
-        if (data.titelbild.related.length <= 1) {
-          const file = await strapi.plugins.upload.services.upload.fetch({id: data.titelbild.id});
-          await strapi.plugins.upload.services.upload.remove(file);
+          const image = await strapi.plugins.upload.services.upload.fetch({id: foto.id});
+          await strapi.plugins.upload.services.upload.remove(image);
         }
       }
     },
 
     async afterCreate(data) {
-      console.log(data);
       await strapi.plugins.email.services.email.send({
         to: 'bauerjakob17@gmail.com',
         template_id: "d-bdc39ab2085945458dbe93accf05facb",
