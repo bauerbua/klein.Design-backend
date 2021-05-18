@@ -12,6 +12,10 @@ module.exports = {
       files.fotos[i].name = imgName + '_' + i
     }
     return files
+  },
+
+  async addEmailToNewsletter(email) {
+    await strapi.services.newsletter.create({email});
   }
 
 };
