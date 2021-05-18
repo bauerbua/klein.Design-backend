@@ -14,7 +14,7 @@ module.exports = ({ env }) => ({
   email: {
     provider: 'sendgrid',
     providerOptions: {
-      apiKey: env('SENDGRID_API_KEY', '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'),
+      apiKey: env('SENDGRID_API_KEY'),
     },
     settings: {
       defaultFrom: 'kleindesign.services@gmail.com',
