@@ -1,5 +1,5 @@
 // PRODUCTION
-/*module.exports = ({ env }) => ({
+module.exports = ({ env }) => ({
   defaultConnection: 'default',
   connections: {
     default: {
@@ -19,9 +19,9 @@
     },
   },
 });
-*/
+
 //DEVELOPMENT
-module.exports = ({ env }) => ({
+/*module.exports = ({ env }) => ({
   defaultConnection: 'default',
   connections: {
     default: {
@@ -40,4 +40,4 @@ module.exports = ({ env }) => ({
       },
     },
   },
-});
+});*/

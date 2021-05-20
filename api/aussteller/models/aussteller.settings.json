@@ -24,7 +24,9 @@
       "type": "string"
     },
     "email": {
-      "type": "email"
+      "type": "email",
+      "required": true,
+      "unique": true
     },
     "tags": {
       "collection": "tag"
@@ -58,7 +60,7 @@
     },
     "telefonnummer": {
       "type": "biginteger",
-      "required": false,
+      "required": true,
       "private": true
     },
     "standplatz": {
