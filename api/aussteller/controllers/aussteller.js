@@ -47,7 +47,6 @@ module.exports = {
         published_at: null
       });
     }
-
     return sanitizeEntity(entity, {model: strapi.models.aussteller});
   },
 }

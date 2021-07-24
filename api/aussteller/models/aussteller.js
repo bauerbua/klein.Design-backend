@@ -9,12 +9,12 @@ module.exports = {
 
   lifecycles: {
     async afterDelete(data) {
-      // delete all fotos
-      if (data.fotos.length >= 1) {
-        for (const foto of data.fotos) {
-          const image = await strapi.plugins.upload.services.upload.fetch({id: foto.id});
-          await strapi.plugins.upload.services.upload.remove(image);
+      if (Array.isArray(data)) {
+        for (const entry of data) {
+          await strapi.services.aussteller.deleteLinkedImages(entry.fotos);
         }
+      } else {
+        await strapi.services.aussteller.deleteLinkedImages(data.fotos);
       }
     },
 
