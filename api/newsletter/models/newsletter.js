@@ -8,15 +8,15 @@
 module.exports = {
   lifecycles: {
     async afterCreate() {
-      await strapi.services.newsletter.updateNewsletterList()
+      await strapi.services.newsletter.updateNewsletterList();
     },
 
     async afterDelete() {
-      await strapi.services.newsletter.updateNewsletterList()
+      await strapi.services.newsletter.updateNewsletterList();
     },
 
     async afterUpdate() {
-      await strapi.services.newsletter.updateNewsletterList()
+      await strapi.services.newsletter.updateNewsletterList();
     }
   }
 };
